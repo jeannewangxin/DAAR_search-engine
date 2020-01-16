@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>
+        Resultats de recherche
+    </title>
+    <link href="css/search_result.css" rel="stylesheet" type="text/css">
+    </link>
+    </meta>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#sortby").change(function(){
+                var data = $.ajax({
+                    type: 'POST',
+                    url: "/search",
+                    data: $("#sortby").val,
+                    dataType: "text",
+                    success: function(resultData) {
+                        var localproducts = [];
+                        localproducts.push({
+                            'bookname' : 1,
+                            'author' : 'dhsjdh',
+                            'date' : 'dsjdbj'
+                        });
+                        localproducts.push({
+                            'bookname' : 2,
+                            'author' : 'dsdhsjdh',
+                            'date' : 'sdskdhsh'
+                        });
+                        console.log(localproducts);
+                        alert("Save Complete") }
+                });
+                saveData.error(function() { alert("Something went wrong"); });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="header_opac">
+    <h1 class="header_opac_img">
+        <div class="header_opac_logo">
+            <img alt="logo" src="images/logo.jpg"/>
+            Resultats de recherche<br>
+        </div>
+    </h1>
+    <div class="header_right header_right_top">
+        <p class="header_right_font"></p>
+    </div>
+</div>
+
+<div id="content">
+    <div class="book_article">
+        <div class="search_form bulk-actions">
+            <p style="font-size:14px;">
+				Vous avez <strong class="red">6330</strong> title=' <font color="red"><span th:text="${regex}"></span></font> </font>' resultats
+                &nbsp;&nbsp;&nbsp;
+            </p>
+        </div>
+        <div class="search_form bulk-actions">
+            <form method="get" id="f">
+                <p>
+                    <select id="sortby">
+                        <option value="pageranking">pageranking</option>
+                        <option value="betwennesse">betwennesse</option>
+                        <option value="closenesse">closenesse</option>
+                    </select>
+                    <input type="text" maxlength="250" name="s2_text" id="s2_text" value="" style="width:330px;"/>
+					<input class="btn btn-primary" type="button" value="recherche"/>
+                    <input type="hidden" id="search_bar" name="search_bar" value="result"/>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="book_article">
+        <br/>
+    </div>
+    <div class="book_article">
+        <p class="booktab_line">
+            <span class="booktab_current"><a href="#">tous les livres</a></span>
+        </p>
+        <div id="num">
+		                  <span class="pagination"> Precedent <b><font color=red>1</font> / <font color=black>317</font></b> &nbsp;<a href="#">Suivant</a> Aa <select
+                                  name='topage' size='1'>
+<option value='1' selected>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+</select>pages</span>
+        </div>
+    </div>
+    <div class="book_article numstyle">
+          <span class="num_prev"> Last <b><font color=red>1</font> / <font color=black>317</font></b> &nbsp;<a href="#">Next</a> To  <select
+                  name='topage' size='1'>
+<option value='1' selected>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+</select>页</span></div>
+    <hr style=" background-color:green;size:2px;"/>
+    <div class="clear"></div>
+</div>
+</div>
+<div class="go_top_r"><a href="#" ><img alt="返回顶部" title="返回顶部" src="images/cultures.png"></a>
+</div>
+
+</div>
+<div id="footer">
+    <div id="copy"><p><a target="_blank" href="http://www.bupmc.upmc.fr/fr/bibliotheques.html">Bibiliothèque de Sorbonnnnnnnnnnnne
+        Université</a></p></div>
+</div>
+</body>
+</html>

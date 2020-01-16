@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Moteur de Recherche
+            </title>
+            <link href="css/index.css" rel="stylesheet" type="text/css">
+            </link>
+        </meta>
+    </head>
+    <body>
+        <div id="container">
+            <img alt="logo" src="images/logo.jpg"/>
+            <div class="search">
+                <form action="/search" method="post">
+                    <input placeholder="saisir..." id="regex" name="regex" type="text">
+                    <button type="submit" id="btn_submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+       
+    <script>
+       /* btn_submit.onclick = function(){
+            var keyWord = $("#keyWord").val();
+              $.ajax({
+                type:"post",
+                url:"/main/search",
+                data:{keyWord:keyWord},
+                success:function(data){
+                    if(data.code>0){
+                        alert(data.msg);
+                        location.href="/search";
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error:function(){
+                    alert("Error!!!");
+                }
+            });
+        }
+*/
+    </script>
+    </body>
+</html>
